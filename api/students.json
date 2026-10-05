@@ -1,0 +1,85 @@
+{
+  "user": [
+    {
+      "id": "101",
+      "name": "John Doe",
+      "email": "john.doe@example.com"
+    },
+    {
+      "id": "7ItYip0iF0I",
+      "name": "Kumar",
+      "email": "kumar@test.com"
+    },
+    {
+      "id": "SDwYI2My_qU",
+      "name": "Kumar",
+      "email": "kumar@test.com"
+    },
+    {
+      "id": "Sdau9g6vraw",
+      "name": "Kumar",
+      "email": "kumar@test.com"
+    },
+    {
+      "id": "AsTzeF1uFh8",
+      "name": "Kumar",
+      "email": "kumar@test.com"
+    },
+    {
+      "id": "D3pDppAZMHQ",
+      "name": "Kumar",
+      "email": "kumar@test.com"
+    },
+    {
+      "id": "UyaXytzkKQY",
+      "name": "Kumar",
+      "email": "kumar@test.com"
+    },
+    {
+      "id": "T24cpM53a9Q",
+      "name": "Kumar",
+      "email": "kumar@test.com"
+    },
+    {
+      "id": "krgJU9qkgS8",
+      "name": "Kumar",
+      "email": "kumar@test.com"
+    },
+    {
+      "id": "W7fdTWeyFP8",
+      "name": "Kumar",
+      "email": "kumar@test.com"
+    },
+    {
+      "id": "Eej3LsciPzw",
+      "name": "E2E User",
+      "email": "e2e.user@example.com"
+    },
+    {
+      "id": "UTM2HxP08ic",
+      "name": "E2E User",
+      "email": "e2e.user@example.com"
+    },
+    {
+      "id": "POgWMLmNjZA",
+      "name": "E2E User",
+      "email": "e2e.user@example.com"
+    },
+    {
+      "id": "gfOBnd0kQsQ",
+      "name": "E2E User",
+      "email": "e2e.user@example.com"
+    },
+    {
+      "id": "bWG85xISB80",
+      "name": "E2E User",
+      "email": "e2e.user@example.com"
+    },
+    {
+      "id": "OyghQEaLgXs",
+      "name": "E2E User",
+      "email": "e2e.user@example.com"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
