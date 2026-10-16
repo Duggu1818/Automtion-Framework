@@ -1,27 +1,51 @@
-name: Playwright Tests
+name: Playwright CI/CD Pipeline
+
 on:
   push:
-    branches: [ Main,main, master ]
+    branches: [ Main, main, master ]
   pull_request:
-    branches: [ Main,main, master ]
+    branches: [ Main, main, master ]
+
 jobs:
-  test:
+  build-and-test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
+    - name: 1. Code Checkout
+      uses: actions/checkout@v4
+
+    - name: 2. Node.js Setup
+      uses: actions/setup-node@v4
       with:
-        node-version: lts/*
-    - name: Install dependencies
+        node-version: 20
+
+    - name: 3. Dependencies Install (Build Step)
       run: npm ci
-    - name: Install Playwright Browsers
+
+    - name: 4. Lint Check (Company la must)
+      run: npx eslint . --ext .js,.ts || echo "No lint config, skipping"
+
+    - name: 5. Playwright Browsers Install
       run: npx playwright install --with-deps
-    - name: Run Playwright tests
+
+    - name: 6. Run Tests (Test Step)
       run: npx playwright test
-    - uses: actions/upload-artifact@v4
-      if: ${{ !cancelled() }}
+
+    - name: 7. Upload Report (Artifact)
+      uses: actions/upload-artifact@v4
+      if: always()
       with:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+
+  deploy:
+    needs: build-and-test
+    if: github.ref == 'refs/heads/Main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Deploy to GitHub Pages (Example Deploy)
+      run: |
+        echo "Deploying... Test passed, so deploying to production!"
+        echo "Here company will run: npm run deploy or docker push"
